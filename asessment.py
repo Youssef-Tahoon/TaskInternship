@@ -9,7 +9,7 @@ def index():
     csv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Table_Input.csv')
     df = pd.read_csv(csv_path)
 
-
+    
     # Process values for Table 2
     a5 = df.iloc[4, 1]  # A5 is 5th row, 2nd column (0-indexed)
     a7 = df.iloc[6, 1]
@@ -27,3 +27,6 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    import os
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
