@@ -1,11 +1,14 @@
 from flask import Flask, render_template
 import pandas as pd
+import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    df = pd.read_csv('Table_Input.csv')
+    csv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Table_Input.csv')
+    df = pd.read_csv(csv_path)
+
 
     # Process values for Table 2
     a5 = df.iloc[4, 1]  # A5 is 5th row, 2nd column (0-indexed)
