@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Output & Processing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Table 1</h2>
+    <div class="table1">{{ table1|safe }}</div>
+
+    <h2>Table 2</h2>
+    <table>
+        <tr><th>Category</th><th>Value</th></tr>
+        <tr><td>Alpha</td><td>{{ table2['Alpha'] }}</td></tr>
+        <tr><td>Beta</td><td>{{ table2['Beta'] }}</td></tr>
+        <tr><td>Charlie</td><td>{{ table2['Charlie'] }}</td></tr>
+    </table>
+</body>
+</html>
